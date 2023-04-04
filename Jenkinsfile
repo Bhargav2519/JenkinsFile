@@ -1,6 +1,7 @@
 pipeline {
     agent any
     parameters {
+        string(name: 'input', description: 'Enter the Github URL:')
         choice(choices:'java\npython\ndotnet\nnodejs\nreacjs\nangularjs', name: 'lang')
     }
     tools {
@@ -13,10 +14,11 @@ pipeline {
                 script {
                     if (params.lang == 'java') {
                     echo "${params.lang}"
-                    git branch: 'master', credentialsId: 'gitcred', url: 'https://github.com/padmarajuraju/maven-web-application.git'
+                    echo "${params.input}"
+                    git branch: 'master', credentialsId: 'gitcred', url: "${params.input}"
                     }
                     else if (params.lang == 'python') {
-                      echo "${params.lang}"
+                      echo "${params.input}"
                     }
                     else if (params.lang == 'dotnet') {
                       echo "${params.lang}"
