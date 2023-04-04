@@ -2,7 +2,7 @@ pipeline {
     agent any
     parameters {
         string(name: 'input', description: 'Enter the Github URL:')
-        string(name: 'branchInput', description: 'Enter the branch name'
+        string(name: 'branchInput', description: 'Enter the branch name')
         choice(choices:'java\npython\ndotnet\nnodejs\nreacjs\nangularjs', name: 'lang')
     }
     tools {
