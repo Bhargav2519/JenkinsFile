@@ -16,7 +16,7 @@ pipeline {
                     if (params.lang == 'java') {
                     echo "${params.lang}"
                     echo "${params.input}"
-                        git branch: "{params.branchInput}", credentialsId: 'gitcred', url: "${params.input}"
+                        git branch: "${params.branchInput}", credentialsId: 'gitcred', url: "${params.input}"
                     }
                     else if (params.lang == 'python') {
                       echo "${params.lang}"
