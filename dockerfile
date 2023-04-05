@@ -11,8 +11,9 @@ RUN mv maven-web-application* /opt/maven
 WORKDIR /opt/maven/maven-web-application/
 
 # Install any dependencies required by the project
-RUN mvn clean install
+RUN mvn clean install package
 
 # Run the tests
 RUN mvn test
-
+CMD ["mvn", "clean", "install"]
+CMD ["mvn", "clean", "test"]
