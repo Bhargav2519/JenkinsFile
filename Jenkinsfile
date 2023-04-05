@@ -48,7 +48,7 @@ pipeline {
                     } 
                     else if (params.lang == 'python') 
                     {
-                        sh 'docker build -t mavenpipeline .'
+                        sh 'sudo docker build -t mavenpipeline .'
                         echo "${params.lang}"
                         echo "${params.lang} Build successful"
                     }
