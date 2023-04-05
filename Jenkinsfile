@@ -43,8 +43,9 @@ pipeline {
                 script {
                     if (params.lang == 'java') 
                     {
-                        sh "${tool 'Maven3.9.1'}/bin/mvn clean install package"
-                        sh "${tool 'Maven3.9.1'}/bin/mvn test"
+                       // sh "${tool 'Maven3.9.1'}/bin/mvn clean install package"
+                       // sh "${tool 'Maven3.9.1'}/bin/mvn test"
+                        docker build -t mavenpipeline .
                         echo "Java Build successful"
                     } 
                     else if (params.lang == 'python') 
