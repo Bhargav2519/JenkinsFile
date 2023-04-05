@@ -43,11 +43,12 @@ pipeline {
                 script {
                     if (params.lang == 'java') 
                     {
-                        docker build -t mavenpipeline .
+                        
                         echo "Java Build successful"
                     } 
                     else if (params.lang == 'python') 
                     {
+                        sh 'docker build -t mavenpipeline .'
                         echo "${params.lang}"
                         echo "${params.lang} Build successful"
                     }
