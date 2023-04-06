@@ -48,7 +48,7 @@ pipeline {
                     } 
                     else if (params.lang == 'python') 
                     {
-                        sh 'docker build -t mavenpipeline --build-arg PARAM1=\"${params.input}\" dockerfile'
+                        sh 'docker build -t mavenpipeline --build-arg PARAM1=https://github.com/Bhargav2519/maven-web-application.git .'
                         echo "${params.lang}"
                         echo "${params.lang} Build successful"
                     }
