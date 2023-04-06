@@ -48,8 +48,7 @@ pipeline {
                     } 
                     else if (params.lang == 'python') 
                     {
-                        def var = "${params.input}"
-                        sh 'docker build -t mavenpipeline --build-arg PARAM1=$(var) .'
+                        sh "docker build -t mavenpipeline --build-arg PARAM1=${input} ."
                         echo "${params.lang}"
                         echo "${params.lang} Build successful"
                     }
