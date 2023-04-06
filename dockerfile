@@ -1,9 +1,11 @@
+ARG PARAM1=default_value
+
 FROM maven:3.8.4-jdk-11
 # Set the working directory to /app
 WORKDIR /app
 
 # Clone the GitHub repository into the container
-RUN git clone https://github.com/padmarajuraju/maven-web-application.git
+RUN git clone $PARAM1
 # Change to the cloned repository directory
 
 RUN mkdir /opt/maven
